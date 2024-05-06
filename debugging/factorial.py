@@ -8,10 +8,16 @@ def factorial(n):
         n = n - 1
     return result
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script_name.py <number>")
+    sys.exit(1)
 
 try:
     num = int(sys.argv[1])
+except ValueError:
+    print("Please provide a valid integer.")
+    sys.exit(1)
 
-    f = factorial(num)
+f = factorial(num)
 
 print(f)
